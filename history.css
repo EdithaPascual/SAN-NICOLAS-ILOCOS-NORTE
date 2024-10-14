@@ -1,0 +1,92 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Helvetica', sans-serif;
+    position: relative;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    min-height: 100vh; /* Ensure the body can extend beyond the viewport */
+}
+
+/* Background Image */
+body {
+    background-image: url('image/background.jpg'); /* Make sure the path to the image is correct */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Keep the background fixed during scroll */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 60px; /* Add padding at the bottom to ensure content is not hidden by potential scrollbar */
+}
+
+/* Navigation Bar */
+nav {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed; /* Make the nav bar fixed */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Make sure the nav is on top of other elements */
+}
+
+/* Navigation Menu */
+nav ul {
+    list-style: none;
+    display: inline-flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Content Section */
+.content {
+    margin-top: 80px; /* Add top margin to account for the fixed nav */
+    padding: 20px;
+    max-width: 800px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9); /* Slightly opaque background for readability */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.content h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}

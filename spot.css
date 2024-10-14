@@ -1,0 +1,121 @@
+/* Global styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    font-family: 'Helvetica', sans-serif;
+    height: 100%; /* Ensure html and body take full height */
+    width: 100%; /* Ensure html and body take full width */
+}
+
+/* Body Background */
+body {
+    background-image: url('image/background.jpg'); /* Make sure the path to the image is correct */
+    background-size: cover; /* Cover the entire viewport */
+    background-position: center; /* Center the background image */
+    background-attachment: fixed; /* Keep the background fixed during scroll */
+    background-repeat: no-repeat; /* Prevent background repetition */
+    margin: 0; /* Remove default margin */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 60px; /* Add padding at the bottom to ensure content is not hidden by potential scrollbar */
+}
+
+/* Navigation Bar */
+nav {
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed; /* Make the nav bar fixed */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Make sure the nav is on top of other elements */
+}
+
+/* Navigation Menu */
+nav ul {
+    list-style: none;
+    display: inline-flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav ul li a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: white;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transition: width 0.3s;
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Content Margin to Account for Fixed Navbar */
+body {
+    margin-top: 80px; /* Add top margin to account for the fixed nav */
+}
+
+/* Card Container */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px; /* Space between cards */
+    max-width: 1200px; /* Adjust the max width as needed */
+    padding: 20px;
+}
+
+/* Card Styles */
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px; /* Ensure all cards are the same size */
+    height: 350px; /* Set a consistent height for all cards */
+    text-decoration: none; /* Remove underline from links */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Enhance the shadow on hover */
+}
+
+/* Image Styles */
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover; /* Ensure images cover the area without distortion */
+}
+
+/* Card Name Styles */
+.card-name {
+    padding: 10px;
+    font-size: 1.2em;
+    color: #333;
+}
